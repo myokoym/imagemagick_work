@@ -1,41 +1,53 @@
-!# usr/bin/ruby -w
+!# /usr/bin/ruby -w
 require 'RMagick'
 
 class ShogiBoard
-  def draw(pieces)
+  FU = "歩"
+  KYO = "香"
+  KEI = "桂"
+  GIN = "銀"
+  KIN = "金"
+  KAKU = "角"
+  HI = "飛"
+  GYOKU = "玉"
+  TO = "と"
+  NARI_KYO = "杏"
+  NARI_KEI = "圭"
+  NARI_GIN = "全"
+  UMA = "馬"
+  RYU = "龍"
+  def initialize
+    @status_onboard = [[[KYO, true], [KEI, true], [GIN, true], [KIN, true], [GYOKU, true], [KIN, true], [GIN, true], [KEI, true], [KYO, true]],
+                       [nil, [HI, true], nil, nil, nil, nil, nil, nil, nil, [KAKU, true], nil],
+                       [[FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true]],
+                       [nil, nil, nil, nil, nil, nil, nil, nil, nil], 
+                       [nil, nil, nil, nil, nil, nil, nil, nil, nil], 
+                       [nil, nil, nil, nil, nil, nil, nil, nil, nil], 
+                       [[FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false]],
+                       [nil, [KAKU, false], nil, nil, nil, nil, nil, nil, nil, [HI, false], nil],
+                       [[KYO, false], [KEI, false], [GIN, false], [KIN, false], [GYOKU, false], [KIN, false], [GIN, false], [KEI, false], [KYO, false]]]
+  end
+  
+  def draw
     canvas = Magick::ImageList.new
     canvas.new_image(270, 270, Magick::HatchFill.new('white', 'black', 30))
     
     text = Magick::Draw.new
     text.pointsize = 29
     text.font = '/usr/share/fonts/truetype/ttf-japanese-gothic.ttf'
-    pieces.each_with_index do |row_pieces, y_index|
+    @status_onboard.each_with_index do |row_pieces, y_index|
       row_pieces.each_with_index do |piece, x_index|
-        x = -120 + x_index * 30
-        y = -120 + y_index * 30
-        text.annotate(canvas, 0, 0, x, y, piece) {
-          self.rotation = 180 if x_index == 2
-          self.gravity = Magick::CenterGravity
-        }
+        if piece
+          x = -120 + x_index * 30
+          y = -120 + y_index * 30
+          text.annotate(canvas, 0, 0, x, y, piece[0]) {
+            self.rotation = 180 if piece[1]
+            self.gravity = Magick::CenterGravity
+          }
+        end
       end 
     end  
     canvas.display
   end
 end
-
-shogi_board = ShogiBoard.new
-shogi_board.draw([["a", "b", "c", "歩"]])
- 
-__END__
-circle = Magick::Draw.new
-circle.stroke('tomato')
-circle.fill_opacity(0)
-circle.stroke_width(6)
-circle.stroke_linecap('round')
-circle.stroke_linejoin('round')
-circle.ellipse(canvas.rows/2,canvas.columns/2, 80, 80, 0, 315)
-circle.polyline(180,70, 173,78, 190,78, 191,62)
-circle.draw(canvas)
-
-canvas.display
 
