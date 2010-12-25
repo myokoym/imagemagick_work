@@ -16,6 +16,7 @@ class ShogiBoard
   NARI_GIN = "全"
   UMA = "馬"
   RYU = "龍"
+
   def initialize
     @status_onboard = [[[KYO, true], [KEI, true], [GIN, true], [KIN, true], [GYOKU, true], [KIN, true], [GIN, true], [KEI, true], [KYO, true]],
                        [nil, [HI, true], nil, nil, nil, nil, nil, [KAKU, true], nil],
@@ -31,11 +32,10 @@ class ShogiBoard
   def draw
     canvas = Magick::ImageList.new
     canvas.new_image(270, 270, Magick::HatchFill.new('white', 'black', 30))
-    
     text = Magick::Draw.new
     text.pointsize = 29
-    @status_onboard.each_with_index do |row_pieces, y_index|
     text.font = '/usr/share/fonts/truetype/ttf-japanese-gothic.ttf'
+    @status_onboard.each_with_index do |row_pieces, y_index|
       row_pieces.each_with_index do |piece, x_index|
         if piece
           x = -120 + x_index * 30
@@ -44,7 +44,7 @@ class ShogiBoard
             self.gravity = Magick::CenterGravity
             if piece[1]
               self.rotation = 180
-              self.font_weight = Magick::BoldWeight
+              #self.font_weight = Magick::BoldWeight
             end
           }
         end
