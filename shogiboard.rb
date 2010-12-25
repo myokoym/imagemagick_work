@@ -18,13 +18,13 @@ class ShogiBoard
   RYU = "龍"
   def initialize
     @status_onboard = [[[KYO, true], [KEI, true], [GIN, true], [KIN, true], [GYOKU, true], [KIN, true], [GIN, true], [KEI, true], [KYO, true]],
-                       [nil, [HI, true], nil, nil, nil, nil, nil, nil, nil, [KAKU, true], nil],
+                       [nil, [HI, true], nil, nil, nil, nil, nil, [KAKU, true], nil],
                        [[FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true], [FU, true]],
                        [nil, nil, nil, nil, nil, nil, nil, nil, nil], 
                        [nil, nil, nil, nil, nil, nil, nil, nil, nil], 
                        [nil, nil, nil, nil, nil, nil, nil, nil, nil], 
                        [[FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false], [FU, false]],
-                       [nil, [KAKU, false], nil, nil, nil, nil, nil, nil, nil, [HI, false], nil],
+                       [nil, [KAKU, false], nil, nil, nil, nil, nil, [HI, false], nil],
                        [[KYO, false], [KEI, false], [GIN, false], [KIN, false], [GYOKU, false], [KIN, false], [GIN, false], [KEI, false], [KYO, false]]]
   end
   
@@ -34,15 +34,18 @@ class ShogiBoard
     
     text = Magick::Draw.new
     text.pointsize = 29
-    text.font = '/usr/share/fonts/truetype/ttf-japanese-gothic.ttf'
     @status_onboard.each_with_index do |row_pieces, y_index|
+    text.font = '/usr/share/fonts/truetype/ttf-japanese-gothic.ttf'
       row_pieces.each_with_index do |piece, x_index|
         if piece
           x = -120 + x_index * 30
           y = -120 + y_index * 30
           text.annotate(canvas, 0, 0, x, y, piece[0]) {
-            self.rotation = 180 if piece[1]
             self.gravity = Magick::CenterGravity
+            if piece[1]
+              self.rotation = 180
+              self.font_weight = Magick::BoldWeight
+            end
           }
         end
       end 
