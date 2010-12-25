@@ -7,7 +7,7 @@ canvas.new_image(270, 270, Magick::HatchFill.new('white', 'black', 30))
 chars = ["a", "b", "c", "歩"]
 
 text = Magick::Draw.new
-text.pointsize = 28
+text.pointsize = 29
 text.font = '/usr/share/fonts/truetype/ttf-japanese-gothic.ttf'
 #text.font_family = 'helvetica'
 chars.each_with_index do |c, i|

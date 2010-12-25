@@ -1,0 +1,320 @@
+
+koym@myokoym-desktop:~$ export PS1="$ "
+$ cd source/ruby/rmagick/
+$ ls
+drawcircle.rb  drawshogiboard.rb  myicon.png  smallicon.gif  startmagick.rb
+$ vi annotatermagick
+$ cp drawcircle.rb annotatermagick.rb
+$ vi annotatermagick.rb 
+$ ruby annotatermagick
+ruby: No such file or directory -- annotatermagick (LoadError)
+$ ruby annotatermagick.rb 
+annotatermagick.rb:15: uninitialized constant Text (NameError)
+$ vi annotatermagick.rb 
+$ ls
+annotatermagick.rb  myicon.png
+drawcircle.rb       smallicon.gif
+drawshogiboard.rb   startmagick.rb
+$ ruby annotatermagick.rb 
+$ vi annotatermagick.rb 
+$ ls
+annotatermagick.rb  myicon.png     startmagick.rb
+drawcircle.rb       rubyname.gif
+drawshogiboard.rb   smallicon.gif
+$ rubyname.gif
+rubyname.gif: command not found
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ruby drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ ls
+annotatermagick.rb  myicon.png     startmagick.rb
+drawcircle.rb       rubyname.gif
+drawshogiboard.rb   smallicon.gif
+$ pwd
+/home/myokoym/source/ruby/rmagick
+$ git init
+Initialized empty Git repository in /home/myokoym/source/ruby/rmagick/.git/
+$ git add .
+$ git commit -m "This is RMagick work directory."
+[master (root-commit) 09c34d9] This is RMagick work directory.
+ 7 files changed, 96 insertions(+), 0 deletions(-)
+ create mode 100644 annotatermagick.rb
+ create mode 100644 drawcircle.rb
+ create mode 100644 drawshogiboard.rb
+ create mode 100644 myicon.png
+ create mode 100644 rubyname.gif
+ create mode 100644 smallicon.gif
+ create mode 100644 startmagick.rb
+$ ls
+annotatermagick.rb  myicon.png     startmagick.rb
+drawcircle.rb       rubyname.gif
+drawshogiboard.rb   smallicon.gif
+$ ls -l
+合計 44
+-rw-r--r-- 1 myokoym myokoym   594 2010-12-23 21:38 annotatermagick.rb
+-rw-r--r-- 1 myokoym myokoym   446 2010-12-23 20:54 drawcircle.rb
+-rw-r--r-- 1 myokoym myokoym   836 2010-12-23 23:53 drawshogiboard.rb
+-rw-r--r-- 1 myokoym myokoym  7154 2010-12-20 00:56 myicon.png
+-rw-r--r-- 1 myokoym myokoym 14974 2010-12-23 21:38 rubyname.gif
+-rw-r--r-- 1 myokoym myokoym  1874 2010-12-20 21:42 smallicon.gif
+-rw-r--r-- 1 myokoym myokoym   164 2010-12-20 21:42 startmagick.rb
+$ ls 
+annotatermagick.rb  myicon.png     startmagick.rb
+drawcircle.rb       rubyname.gif
+drawshogiboard.rb   smallicon.gif
+$ ls --help
+使用法: ls [オプション]... [ファイル]...
+FILEの情報を一覧表示します（デフォルトは現在のディレクトリ)。
+ -cftuvSUX も --sort も指定しなかった場合、アルファベット順に表示します。
+
+長いオプションに必須の引数は短いオプションにも必須です.
+  -a, --all                  .で始まるエントリを無視しない。
+  -A, --almost-all           .や..を表示しない。
+      --author               -lと併用することで、各ファイルの作成者を表示する。
+  -b, --escape               非図形文字を8進エスケープとして表示する。
+      --block-size=SIZE      ブロックサイズを SIZE とする
+  -B, --ignore-backups       末尾に '~' がつくファイルをリスト表示しない
+  -c                          -lt 付き: ctime(最終更新時刻) でソートして表示
+                              -l 付き:  ctime を表示する。名前でソートする
+                              その他:   ctime でソートする
+  -C                         列方向に一覧表示します。
+      --color[=WHEN]         ファイル種別によって色分けするかどうか制御します。
+                               WHEN は `never'、`always'、`auto' のいずれかです。
+  -d, --directory            ディレクトリの内容ではなく、ディレクトリのエントリを表示します。
+                               また、シンボリックリンクは辿りません。
+  -D, --dired                Emacs の dired モード用の出力を生成します。
+  -f                         整列しません。-aU を有効にし、-ls --color を無効にします。
+  -F, --classify             エントリの末尾に、記号（*/=>@| のいずれか）を付加します。
+      --file-type            -F と同様ですが、`*' は付加しません。
+      --format=WORD          across -x、commas -m、horizontal -x、long -l、
+                               single-column -1、verbose -l、vertical -C
+      --full-time            -l --time-style=full-iso と同様です。
+  -g                         -l　と同じ、ただし所有者はリストしない。
+      --group-directories-first
+                             ディレクトリをファイルより前に表示します。
+                               --sort オプションと併用できますが、
+                               --sort=none (-U) と併用すると無効になります。
+  -G, --no-group             詳細表示でグループ名を表示しません。
+  -h, --human-readable       -l と併用すると、サイズを人間の理解しやすい形式で表示します。
+                               (例: 1K 234M 2G)
+      --si                   -h と同様ですが、1024ではなく1000の累乗で表示します。
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                             that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --indicator-style=WORD  エントリ名にWORD形式の目印をつける:
+                               なし (デフォルト), スラッシュ (-p),
+                               ファイルタイプ (--file-type), 分類 (-F)
+  -i, --inode                各ファイルの目次をプリント
+  -I, --ignore=PATTERN       シェル PATTERNと同じエントリーはリストに入れない
+  -k                          --block-size=1Kと同じ
+  -l                         詳細リスト形式を表示する
+  -L, --dereference          シンボリックリンクのファイル情報を表示するときは
+                               リンクそのものではなくリンク参照先のファイル
+                               情報を表示する
+  -m                         項目のリストをカンマで区切り、一行に詰め込む
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print raw entry names (don't treat e.g. control
+                               characters specially)
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   表示不可能な文字を ? に置き換える
+      --show-control-chars   表示不可能な文字をそのまま表示 (プログラムが
+                             `ls' でなかったり出力が端末でない場合の初期状態)
+  -Q, --quote-name           ファイル名をダブルクォート(")で囲む
+      --quoting-style=WORD   項目名のクォートに WORD 文字を使う:
+                               literal, locale, shell, shell-always, c, escape
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size
+      --sort=WORD            sort by WORD instead of name: none -U,
+                             extension -X, size -S, time -t, version -v
+      --time=WORD            with -l, show time as WORD instead of modification
+                             time: atime -u, access -u, use -u, ctime -c,
+                             or status -c; use specified time as sort key
+                             if --sort=time
+      --time-style=STYLE     with -l, show times using style STYLE:
+                             full-iso, long-iso, iso, locale, +FORMAT.
+                             FORMAT is interpreted like `date'; if FORMAT is
+                             FORMAT1<newline>FORMAT2, FORMAT1 applies to
+                             non-recent files and FORMAT2 to recent files;
+                             if STYLE is prefixed with `posix-', STYLE
+                             takes effect only outside the POSIX locale
+  -t                         変更時刻で整列する。
+  -T, --tabsize=COLS         タブ幅を8ではなく指定した値に設定する。
+  -u                         -ltと併用: アクセス時刻を表示し、アクセス時刻で整列する。
+                               -lと併用: アクセス時刻を表示し、名前で整列する。
+                               その他: アクセス時刻で整列する。
+  -U                         整列しない。ディレクトリ順にエントリを表示する。
+  -v                         数字をバージョン番号と認識し、自然な整列をする。
+  -w, --width=COLS           画面幅として、現在の値ではなく指定した値を仮定する。
+  -x                         列方向ではなく行方向にリストする。
+  -X                         拡張子のアルファベット順に整列する。
+  -Z, --context              各ファイルのSELinuxセキュリティコンテキストを表示する。
+  -1                         1行に1ファイルの情報を表示する。
+      --help     この使い方を表示して終了
+      --version  バージョン情報を表示して終了
+
+SIZE は以下のどれか (又は以下のどれかがオプションで続く整数)：
+kB 1000, K 1024, MB 1000*1000, M 1024*1024, などを G, T, P, E, Z, Yに用いる
+
+By default, color is not used to distinguish types of files.  That is
+equivalent to using --color=none.  Using the --color option without the
+optional WHEN argument is equivalent to using --color=always.  With
+--color=auto, color codes are output only if standard output is connected
+to a terminal (tty).  The environment variable LS_COLORS can influence the
+colors, and can be set easily by the dircolors command.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+Report ls bugs to bug-coreutils@gnu.org
+GNU coreutils のホームページ: <http://www.gnu.org/software/coreutils/>
+GNU ソフトウェアを使用する際の一般的なヘルプ: <http://www.gnu.org/gethelp/>
+Report ls translation bugs to <http://translationproject.org/team/>
+$ ls -a
+.                   drawshogiboard.rb
+..                  myicon.png
+.git                rubyname.gif
+annotatermagick.rb  smallicon.gif
+drawcircle.rb       startmagick.rb
+$ git log
+commit 09c34d9d6e067ca4fcdb9b744c63c25802dcfd39
+Author: myokoym <myokoym@gmail.com>
+Date:   Thu Dec 23 23:54:51 2010 +0900
+
+    This is RMagick work directory.
+$ git remote add origin git@github.com:myokoym/imagemagick_work.git
+$ git remote
+origin
+$ git --help
+usage: git [--version] [--exec-path[=GIT_EXEC_PATH]] [--html-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects]
+           [--bare] [--git-dir=GIT_DIR] [--work-tree=GIT_WORK_TREE]
+           [--help] COMMAND [ARGS]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and merge with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+See 'git help COMMAND' for more information on a specific command.
+$ git remote --help
+$ git remote rename origin github
+$ git push github master
+Counting objects: 9, done.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 24.46 KiB, done.
+Total 9 (delta 1), reused 0 (delta 0)
+To git@github.com:myokoym/imagemagick_work.git
+ * [new branch]      master -> master
+$ vi drawshogiboard.rb 
+$ vi drawshogiboard.rb 
+$ git commit -m "gravityと座標を調整"
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   drawshogiboard.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git push github master
+Everything up-to-date
+$ vi drawshogiboard.rb 
+$ 
+
+---
+
+cmyokoym@myokoym-desktop:~/source/ruby/rmagick$ cd /sr/share/fonts
+myokoym@myokoym-desktop:/usr/share/fonts$ ls
+X11  truetype  type1
+myokoym@myokoym-desktop:/usr/share/fonts$ cd truetype
+myokoym@myokoym-desktop:/usr/share/fonts/truetype$ d ..
+
+d: command not found
+myokoym@myokoym-desktop:/usr/share/fonts/truetype$ 
+myokoym@myokoym-desktop:/usr/share/fonts/truetype$ cd ..
+myokoym@myokoym-desktop:/usr/share/fonts$ ls *
+X11:
+100dpi  75dpi  Type1  encodings  misc  util
+
+truetype:
+freefont                 ttf-kacst-one
+openoffice               ttf-khmeros-core
+takao                    ttf-lao
+thai                     ttf-liberation
+ttf-dejavu               ttf-lyx
+ttf-indic-fonts-core     ttf-punjabi-fonts
+ttf-japanese-gothic.ttf  unfonts
+ttf-japanese-mincho.otf  wqy
+
+type1:
+gsfonts  mathml
+myokoym@myokoym-desktop:/usr/share/fonts$ ls *
+
